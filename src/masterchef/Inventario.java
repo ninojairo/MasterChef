@@ -16,7 +16,6 @@ public class Inventario {
     private int i=0;
     private int contadorIngredientes =0;
     
-    
     public Inventario() {
         
     }
@@ -26,29 +25,23 @@ public class Inventario {
         this.ingrediente = ingrediente;
     }
     
-    public String AgregarIngrediente(String nombre, int cantidad, String unidades ){
+    public void setInventario(String nombre, int cantidad, String unidades){
         
-        ingredientes[i++] = new Ingrediente(nombre,cantidad, unidades);
-        contadorIngredientes ++;
-        return "Ingredient added";
+        ingredientes[contadorIngredientes] = new Ingrediente(nombre,cantidad, unidades);
+        System.out.println("Ingredient Added: " + ingredientes[contadorIngredientes].toString());
+        contadorIngredientes++;
+        
     }
     
-    public String ObtenerCantidadTotalIngredientes(){
+    public String getInventario(){
         
-        String respuesta;
-        System.out.println("indice: " +ingredientes.length);
-        System.out.println("contador: " +contadorIngredientes);
-        
-        
-        if (contadorIngredientes !=0){
-            for(int i=0; i<=contadorIngredientes;i++){
-                System.out.println("listado: " +i);
-                System.out.println("Ingrediente adicionado" + ingredientes[i].toString());
+        if (contadorIngredientes >0){
+            for(int j=0; j<contadorIngredientes;j++){
+                System.out.println("Ingredients in stock: " + ingredientes[j].toString());
             }
         }
         
         else{
-            
             System.out.println("No hay ingredientes");
         }
             

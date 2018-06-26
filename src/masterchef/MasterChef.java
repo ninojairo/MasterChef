@@ -59,7 +59,7 @@ public class MasterChef {
         
         int opcion =-1;
         while (opcion!=0){
-            System.out.println("WELCOME TO YOUR KITCHENS\n");
+            System.out.println("***** WELCOME TO YOUR KITCHENS *****\n");
             
             System.out.println("Select your choice: \n");
             System.out.println("1: Inquiry the kitchen");
@@ -69,25 +69,29 @@ public class MasterChef {
             System.out.println("0: Exit: \n");
             
             opcion = Integer.parseInt(scanner.nextLine());
+            int anykey; 
             
             switch (opcion){
                 
                 case 1: {
                     System.out.println("**** Kitchen Features **** \n");
-                    System.out.println("Cocina: " +cocina.toString());
+                    System.out.println("Kitchen: " +cocina.toString());
+                    System.out.println("Press any key");
+                    scanner.nextLine();
                     break;
                 }
                 case 2:{
-                    System.out.println("**** Stock **** \n");
-                    inventario.ObtenerCantidadTotalIngredientes();
+                    System.out.println("**** Kitchen Stock **** \n");
+                    inventario.getInventario();
+                    System.out.println("Press any key");
+                    scanner.nextLine();
                     break;
                 }
                 case 3:{
                     System.out.println("**** Add Ingredient **** \n");
-                    //Ingrediente nuevoIngrediente = new Ingrediente("Onions");
-                    //inventario.AgregarIngrediente(new Ingrediente("Onions"),200, "Unidades");
-                    inventario.AgregarIngrediente("Onions",200, "Unidades");
-                    
+                    inventario.setInventario("Onions",200, "Unidades");
+                    System.out.println("Press any key");
+                    scanner.nextLine();
                     break;
                 }
                 case 0:{

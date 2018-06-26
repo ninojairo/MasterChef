@@ -16,22 +16,14 @@ public class Ingrediente {
     
     public Ingrediente(String nombre) {
         this.nombre = nombre;
-        //this.cantidad = cantidad;
-        //this.unidad = unidad;
     }
-    
     
     public Ingrediente(String nombre, int cantidad, String unidad) {
         this.nombre = nombre;
-        //this.cantidad = cantidad;
-        //this.unidad = unidad;
+        this.cantidad = cantidad;
+        this.unidad = unidad;
     }
     
-    
-    
-    
-    
-
     public String getNombre() {
         return nombre;
     }
@@ -60,7 +52,7 @@ public class Ingrediente {
     @Override
     public String toString(){
         //return ("Ingrediente: " +getNombre()+ "\t Cantidad: " + getCantidad() + "\t" + getUnidad());
-        return ("Ingrediente: " +getNombre());
+        return ("Ingrediente: " +getNombre() + " Cantidad: " +getCantidad() + " " + getUnidad());
     }
     
     
