@@ -33,6 +33,25 @@ public class MasterChef {
         Inventario inventario = new Inventario();
         System.out.println("Inventario creado");
         
+        //Carga Recetas
+        //Receta receta1 = new Receta("Arroz con Camarones", Ingrediente[new Ingrediente("Arroz", 1, "libra"),new Ingrediente("Arroz", 1, "libra")]);
+        Receta receta1 = new Receta("Arroz con Camarones");
+        receta1.setIngredienteReceta("Arroz", 1, "kilo");
+        receta1.setIngredienteReceta("Camarones", 1, "kilo");
+        receta1.setIngredienteReceta("Cebolla", 1, "unidad");
+        
+        Receta receta2 = new Receta("Arepa Huevo");
+        receta1.setIngredienteReceta("Harina", 1, "kilo");
+        receta1.setIngredienteReceta("Huevos", 2, "unidades");
+        receta1.setIngredienteReceta("Aceite", 1, "litro");
+        
+        Receta receta3 = new Receta("Arepa Queso");
+        receta1.setIngredienteReceta("Harina", 1, "kilo");
+        receta1.setIngredienteReceta("Queso", 1, "kilo");
+        receta1.setIngredienteReceta("Manteca", 1, "bloque");
+        
+        
+        
         
         //inventario.AgregarIngrediente("Onions",200, "Unidades");
                    
