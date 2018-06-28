@@ -18,24 +18,60 @@ public class MasterChef {
     /**
      * @param args the command line arguments
      */
+    
+    public void main(){
+    
+    }
+    
+    public void crearCliente(){
+        Cliente customer = new Cliente("Cristiano","Ronaldo");
+    }
+    
+    public void crearIngredientes(){
+        Ingrediente harina = new IngredienteContable("Harina", 5, "Kilos");
+        Ingrediente huevo = new IngredienteContable("Huevo", 12, "Unidades");
+        Ingrediente queso = new IngredienteContable("Huevo", 6, "Kilos");
+        Ingrediente aceite = new IngredienteContable("Carrots", 15, "Litros");
+        Ingrediente camarones = new IngredienteContable("Camarones", 10, "Kilos");
+        Ingrediente carne = new IngredienteContable("Carne", 10, "Kilos");
+    }
+    
+    public void crearInventario(){
+        Inventario inventario = new Inventario();
+        
+    }
+    
+    public void crearReceta(){
+         Receta recetaAH = new Receta("Arepa Huevo");
+         Receta recetaAC = new Receta("Arepa Carne");
+         Receta recetaAQ = new Receta("Arepa Queso");
+         
+         
+        
+    }
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
         
+        MasterChef masterChef = new MasterChef();
+        masterChef.crearCliente();
+        masterChef.crearIngredientes();
+        masterChef.crearInventario();
         
-        /*Cliente prueba = new Persona("", ""); 
-        Persona prueba2 = new Cliente("", "");*/
+        
+                
+        
+                
         
         
-        //Carga Inicial
-        Cliente customer = new Cliente("Cristiano","Ronaldo");
         
-        //Creacion inventario inicial
-        Inventario inventario = new Inventario();
-        System.out.println("Inventario creado");
+        
         
         //Carga Recetas
         //Receta receta1 = new Receta("Arroz con Camarones", Ingrediente[new Ingrediente("Arroz", 1, "libra"),new Ingrediente("Arroz", 1, "libra")]);
-        Receta receta1 = new Receta("Arroz con Camarones");
+        
+        /*Receta receta1 = new Receta("Arroz con Camarones");
         receta1.setIngredienteReceta("Arroz", 1, "kilo");
         receta1.setIngredienteReceta("Camarones", 1, "kilo");
         receta1.setIngredienteReceta("Cebolla", 1, "unidad");
@@ -48,7 +84,7 @@ public class MasterChef {
         Receta receta3 = new Receta("Arepa Queso");
         receta1.setIngredienteReceta("Harina", 1, "kilo");
         receta1.setIngredienteReceta("Queso", 1, "kilo");
-        receta1.setIngredienteReceta("Manteca", 1, "bloque");
+        receta1.setIngredienteReceta("Manteca", 1, "bloque");*/
         
         
         
@@ -56,12 +92,6 @@ public class MasterChef {
         //inventario.AgregarIngrediente("Onions",200, "Unidades");
                    
         
-        /*Ingrediente fish = new IngredienteContable("Fish", 4500, "kilos");
-        Ingrediente meat = new IngredienteContable("Meat", 6500, "kilos");
-        Ingrediente rice = new IngredienteContable("Rice", 1000, "Kilos");
-        Ingrediente carrots = new IngredienteContable("Carrots", 456, "Kilos");
-        Ingrediente beer = new IngredienteLiquido("beer", 100, "Litros");
-        Ingrediente kola = new IngredienteLiquido("kola", 5100, "Litros");
         
         
         Ingrediente ingredients[] = {fish,meat,rice,carrots,beer,kola}; */
