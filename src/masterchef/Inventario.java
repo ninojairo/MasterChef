@@ -11,10 +11,10 @@ package masterchef;
  */
 public class Inventario {
     
-    private Ingrediente ingrediente [];
-    private Ingrediente ingredientes [] = new Ingrediente[50];
-    private int i=0;
-    private int contadorIngredientes =0;
+    private Ingrediente ingredientes [];
+    //private Ingrediente ingredientes [] = new Ingrediente[50];
+    //private int i=0;
+    //private int contadorIngredientes =0;
     
     public Inventario() {
         
@@ -22,18 +22,25 @@ public class Inventario {
     
     
     public Inventario(Ingrediente[] ingredientes) {
-        this.ingrediente = ingrediente;
+        this.ingredientes = ingredientes;
     }
     
-    public void setInventario(String nombre, int cantidad, String unidades){
+    @Override
+    public String toString(){
+        return ("Ingrediente 1: "+ ingredientes);
+    
+    }
+ 
+    
+    /*public void setInventario(String nombre, int cantidad, String unidades){
         
         ingredientes[contadorIngredientes] = new Ingrediente(nombre,cantidad, unidades);
         System.out.println("Ingredient Added: " + ingredientes[contadorIngredientes].toString());
         contadorIngredientes++;
         
-    }
+    }*/
     
-    public String getInventario(){
+    /*public String getInventario(){
         
         if (contadorIngredientes >0){
             for(int j=0; j<contadorIngredientes;j++){
@@ -44,23 +51,19 @@ public class Inventario {
         else{
             System.out.println("No hay ingredientes");
         }
-            
-            
-        
-        
-        
         return "listado devuelto";
     
-    }
+    }*/
     
-    public int obtenerCantidadIngrediente(){
+    /*public int obtenerCantidadIngrediente(){
         int cantidadIngrediente =0;
         
         
         return cantidadIngrediente;
         
-    }
+    }*/
     
+       
     
     
 }

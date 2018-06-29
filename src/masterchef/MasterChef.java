@@ -13,42 +13,95 @@ import java.util.Scanner;
  */
 public class MasterChef {
     
-    private static final Scanner scanner = new Scanner(System.in);
+    //private static final Scanner scanner = new Scanner(System.in);
+    private static final int NUMERO_INGREDIENTES_INVENTARIO =10;
+    
+    
+    
+    private Inventario inventario;
+    private JefeCocina jefeCocina;
+    private Ingrediente ingrediente;
+    private Ingrediente [] ingredientes;
+    
+    private Ingrediente harina;
+    private Ingrediente huevo;
+    private Ingrediente queso;
+    private Ingrediente aceite;
+    private Ingrediente camarones;
+    private Ingrediente carne;
+    private Ingrediente sal;
+    private Ingrediente arroz; 
+    private Ingrediente leche;
+    private Ingrediente limon;
+    
+    private Cocina cocina;
+        
+    
 
     /**
      * @param args the command line arguments
      */
     
-    public void main(){
     
-    }
     
     public void crearCliente(){
-        Cliente customer = new Cliente("Cristiano","Ronaldo");
+        Cliente cliente = new Cliente("Cristiano","Ronaldo");
     }
     
     public void crearIngredientes(){
-        Ingrediente harina = new IngredienteContable("Harina", 5, "Kilos");
-        Ingrediente huevo = new IngredienteContable("Huevo", 12, "Unidades");
-        Ingrediente queso = new IngredienteContable("Huevo", 6, "Kilos");
-        Ingrediente aceite = new IngredienteContable("Carrots", 15, "Litros");
-        Ingrediente camarones = new IngredienteContable("Camarones", 10, "Kilos");
-        Ingrediente carne = new IngredienteContable("Carne", 10, "Kilos");
+        harina = new Ingrediente("Harina", 5, "Kilos");
+        huevo = new Ingrediente("Huevo", 12, "Unidades");
+        queso = new Ingrediente("Queso", 6, "Kilos");
+        aceite = new Ingrediente("Aceite", 15, "Litros");
+        camarones = new Ingrediente("Camarones", 10, "Kilos");
+        carne = new Ingrediente("Carne", 10, "Kilos");
+        sal = new Ingrediente("Sal", 1, "Kilos");
+        arroz = new Ingrediente("Arroz", 10, "Kilos");
+        leche = new Ingrediente("Carne", 10, "Litros");
+        limon = new Ingrediente("Limon", 10, "Unidades");
+        
+        
+        
     }
     
     public void crearInventario(){
-        Inventario inventario = new Inventario();
+        
+        ingredientes = new Ingrediente[NUMERO_INGREDIENTES_INVENTARIO];
+        ingredientes[0] = harina;
+        ingredientes[1] = huevo;
+        ingredientes[2] = queso;
+        ingredientes[3] = aceite;
+        ingredientes[4] = camarones;
+        ingredientes[5] = carne;
+        ingredientes[6] = sal;
+        ingredientes[7] = arroz;
+        ingredientes[8] = leche;
+        ingredientes[9] = limon;
+        inventario = new Inventario(ingredientes);
         
     }
     
-    public void crearReceta(){
+    public void crearRecetas(){
          Receta recetaAH = new Receta("Arepa Huevo");
          Receta recetaAC = new Receta("Arepa Carne");
          Receta recetaAQ = new Receta("Arepa Queso");
-         
-         
+    }
+    
+    public void crearJefeCocina(){
+        jefeCocina = new JefeCocina("Pibe", "Valderrama");
+    
+    }
+    
+    public void crearCocina(){
+        
+        //Cocina cocina = new Cocina();
+        Cocina cocina = new Cocina("Arepalandia", "Arepas", "33 Avenue", "3155678",jefeCocina,inventario);
+        System.out.println("Cocina: " +cocina.toString());
         
     }
+    
+    
+    
     
     
     public static void main(String[] args) {
@@ -58,15 +111,14 @@ public class MasterChef {
         masterChef.crearCliente();
         masterChef.crearIngredientes();
         masterChef.crearInventario();
+        masterChef.crearJefeCocina();
+        masterChef.crearRecetas();
+        masterChef.crearCocina();
+        
+        
         
         
                 
-        
-                
-        
-        
-        
-        
         
         //Carga Recetas
         //Receta receta1 = new Receta("Arroz con Camarones", Ingrediente[new Ingrediente("Arroz", 1, "libra"),new Ingrediente("Arroz", 1, "libra")]);
@@ -89,24 +141,14 @@ public class MasterChef {
         
         
         
-        //inventario.AgregarIngrediente("Onions",200, "Unidades");
-                   
         
         
-        
-        Ingrediente ingredients[] = {fish,meat,rice,carrots,beer,kola}; */
-        
-        //Inventario inventario = new Inventario(ingredients);
-        
-        JefeCocina jefeCocina = new JefeCocina("Pibe", "Valderrama");
-        
-        Cocina cocina = new Cocina("Black Pinguin", "Fish", "33 Avenue", "3155678",jefeCocina,inventario);
         /*System.out.println("Descripcion Cocina: " +cocina.toString());
         System.out.println("**** Inventario ****");
         System.out.println(+inventario.ObtenerCantidadTotalIngredientes());*/
         
         
-        int opcion =-1;
+        /*int opcion =-1;
         while (opcion!=0){
             System.out.println("***** WELCOME TO YOUR KITCHENS *****\n");
             
@@ -151,7 +193,7 @@ public class MasterChef {
             } 
             
         
-        }
+        }*/
         
         
         

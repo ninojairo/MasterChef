@@ -17,6 +17,8 @@ public class Cocina {
     private JefeCocina JefeCocina; 
     private Inventario inventario;
 
+    public Cocina(){}
+    
     public Cocina(String nombre, String especialidad, String direccion, String telefono, JefeCocina JefeCocina, Inventario inventario) {
         this.nombre = nombre;
         this.especialidad = especialidad;
@@ -71,7 +73,7 @@ public class Cocina {
     
     @Override
     public String toString(){
-        return ("\n Name: " + getNombre() + "\n Specialty: " + getEspecialidad() + "\n Boss: " + getJefeCocina());
+        return ("\n Name: " + getNombre() + "\n Specialty: " + getEspecialidad() + "\n Boss: " + getJefeCocina() + "\n Inventario: " + inventario.toString());
     }
     
     
