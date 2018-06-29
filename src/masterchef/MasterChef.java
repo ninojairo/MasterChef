@@ -15,6 +15,8 @@ public class MasterChef {
     
     //private static final Scanner scanner = new Scanner(System.in);
     private static final int NUMERO_INGREDIENTES_INVENTARIO =10;
+    private static final int NUMERO_INGREDIENTES_RECETA =3;
+    
     
     
     
@@ -22,6 +24,8 @@ public class MasterChef {
     private JefeCocina jefeCocina;
     private Ingrediente ingrediente;
     private Ingrediente [] ingredientes;
+    private Ingrediente [] ingredientesAH;
+        
     
     private Ingrediente harina;
     private Ingrediente huevo;
@@ -35,6 +39,10 @@ public class MasterChef {
     private Ingrediente limon;
     
     private Cocina cocina;
+    
+    private Receta recetaAH;
+    private Receta recetaAC;
+    private Receta recetaAQ;
         
     
 
@@ -82,12 +90,27 @@ public class MasterChef {
     }
     
     public void crearRecetas(){
-         Receta recetaAH = new Receta("Arepa Huevo");
-         Receta recetaAC = new Receta("Arepa Carne");
-         Receta recetaAQ = new Receta("Arepa Queso");
+        recetaAH = new Receta("Arepa Huevo");
+        recetaAC = new Receta("Arepa Carne");
+        recetaAQ = new Receta("Arepa Queso");
     }
     
-    public void crearJefeCocina(){
+    public void crearRecetaAH(){
+        
+        ingredientesAH = new Ingrediente[NUMERO_INGREDIENTES_RECETA];
+        Ingrediente harina = new Ingrediente("Harina", 10, "Kilos");
+        Ingrediente huevo = new Ingrediente("Huevo", 1, "Unidad");
+        Ingrediente aceite = new Ingrediente("Aceite", 1, "Litro");
+        //Ingrediente [] ingredientesAH = {harina,huevo,aceite};
+        ingredientesAH[0] = harina;
+        ingredientesAH[1] = huevo;
+        ingredientesAH[2] = aceite;
+        
+        
+    
+    }
+    
+   public void crearJefeCocina(){
         jefeCocina = new JefeCocina("Pibe", "Valderrama");
     
     }
@@ -95,8 +118,25 @@ public class MasterChef {
     public void crearCocina(){
         
         //Cocina cocina = new Cocina();
-        Cocina cocina = new Cocina("Arepalandia", "Arepas", "33 Avenue", "3155678",jefeCocina,inventario);
+        cocina = new Cocina("Arepalandia", "Arepas", "33 Avenue", "3155678",jefeCocina,inventario);
         System.out.println("Cocina: " +cocina.toString());
+       
+        /*for(int i=0;i<ingredientes.length;i++){
+            System.out.println("Inventario: " +inventario.getInventario()[i] );
+        }*/
+        
+   }
+    
+    public boolean validarInventario(){
+        boolean hayInventario = true;
+        System.out.println("Cantidades Receta: " +ingredientesAH[0].getNombre() + " Cantidad: " +ingredientesAH[0].getCantidad());
+        System.out.println("Cantidades Inventario: " +inventario.getInventario()[0]);
+        inventario.getIngrediente("harina");
+        
+        
+        
+        
+        return hayInventario;
         
     }
     
@@ -114,6 +154,11 @@ public class MasterChef {
         masterChef.crearJefeCocina();
         masterChef.crearRecetas();
         masterChef.crearCocina();
+        masterChef.crearRecetaAH();
+        masterChef.validarInventario();
+        
+        
+        
         
         
         

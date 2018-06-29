@@ -12,6 +12,7 @@ package masterchef;
 public class Inventario {
     
     private Ingrediente ingredientes [];
+    private Ingrediente ingrediente;
     //private Ingrediente ingredientes [] = new Ingrediente[50];
     //private int i=0;
     //private int contadorIngredientes =0;
@@ -25,43 +26,33 @@ public class Inventario {
         this.ingredientes = ingredientes;
     }
     
+    public Ingrediente [] getInventario(){
+        return ingredientes;
+    
+    }
+    
+    public Ingrediente getIngrediente(String nombre){
+    
+        for (int i=0; i<ingredientes.length;i++){
+            if(ingredientes[i].getNombre()==nombre){
+                System.out.println("Ingredientes Name: "+ingredientes[i].getNombre() + "Ingredientes Cantidad: "+ingredientes[i].getCantidad());
+                i+=ingredientes.length;
+            }
+            else{
+                System.out.println("No hay");
+            }
+            
+        }
+        
+        return ingrediente;
+    }
+    
     @Override
     public String toString(){
-        return ("Ingrediente 1: "+ ingredientes);
+        return ("Ingrediente 1: "+ ingredientes[1]);
     
     }
  
-    
-    /*public void setInventario(String nombre, int cantidad, String unidades){
-        
-        ingredientes[contadorIngredientes] = new Ingrediente(nombre,cantidad, unidades);
-        System.out.println("Ingredient Added: " + ingredientes[contadorIngredientes].toString());
-        contadorIngredientes++;
-        
-    }*/
-    
-    /*public String getInventario(){
-        
-        if (contadorIngredientes >0){
-            for(int j=0; j<contadorIngredientes;j++){
-                System.out.println("Ingredients in stock: " + ingredientes[j].toString());
-            }
-        }
-        
-        else{
-            System.out.println("No hay ingredientes");
-        }
-        return "listado devuelto";
-    
-    }*/
-    
-    /*public int obtenerCantidadIngrediente(){
-        int cantidadIngrediente =0;
-        
-        
-        return cantidadIngrediente;
-        
-    }*/
     
        
     

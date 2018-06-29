@@ -73,7 +73,7 @@ public class Cocina {
     
     @Override
     public String toString(){
-        return ("\n Name: " + getNombre() + "\n Specialty: " + getEspecialidad() + "\n Boss: " + getJefeCocina() + "\n Inventario: " + inventario.toString());
+        return ("\n Name: " + getNombre() + "\n Specialty: " + getEspecialidad() + "\n Boss: " + getJefeCocina());
     }
     
     
