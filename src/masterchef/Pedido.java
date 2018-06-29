@@ -10,6 +10,27 @@ package masterchef;
  * @author jaironino
  */
 public class Pedido {
-    private Plato plato[];
+    private Plato platos[];
+
+    public Pedido(Plato[] platos) {
+        this.platos = platos;
+    }
+    
+    public int getPrecio(Receta receta){
+        
+        int precio=0;
+        
+        for(int i=0;i<platos.length;i++){
+            precio += platos[i].getPrecio();
+        }
+        
+        
+        return precio;
+    
+    }
+    
+    public void setPedido(){
+    
+    }
     
 }

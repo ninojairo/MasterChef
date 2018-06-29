@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Software_DV/Java/MasterChef/src/masterchef/Ingrediente.java</file>
-            <file>file:/C:/Software_DV/Java/MasterChef/src/masterchef/Inventario.java</file>
-            <file>file:/C:/Software_DV/Java/MasterChef/src/masterchef/MasterChef.java</file>
-            <file>file:/C:/Software_DV/Java/MasterChef/src/masterchef/Receta.java</file>
+            <file>file:/Users/jaironino/JavaProjects/MasterChef/src/masterchef/MasterChef.java</file>
+            <file>file:/Users/jaironino/JavaProjects/MasterChef/src/masterchef/Receta.java</file>
+            <file>file:/Users/jaironino/JavaProjects/MasterChef/src/masterchef/Pedido.java</file>
+            <file>file:/Users/jaironino/JavaProjects/MasterChef/src/masterchef/Plato.java</file>
         </group>
     </open-files>
 </project-private>

@@ -43,6 +43,9 @@ public class MasterChef {
     private Receta recetaAH;
     private Receta recetaAC;
     private Receta recetaAQ;
+    
+    private Plato plato;
+    private Pedido pedido;
         
     
 
@@ -90,9 +93,9 @@ public class MasterChef {
     }
     
     public void crearRecetas(){
-        recetaAH = new Receta("Arepa Huevo");
-        recetaAC = new Receta("Arepa Carne");
-        recetaAQ = new Receta("Arepa Queso");
+        recetaAH = new RecetaArepaHuevo("Arepa Huevo");
+        recetaAC = new RecetaArepaCarne("Arepa Carne");
+        recetaAQ = new RecetaArepaQueso("Arepa Queso");
     }
     
     public void crearRecetaAH(){
@@ -104,19 +107,15 @@ public class MasterChef {
         ingredientesRecetaAH[0] = harina;
         ingredientesRecetaAH[1] = huevo;
         ingredientesRecetaAH[2] = aceite;
-        
-        
-    
     }
     
-   public void crearJefeCocina(){
+    public void crearJefeCocina(){
         jefeCocina = new JefeCocina("Pibe", "Valderrama");
     
     }
     
     public void crearCocina(){
         
-        //Cocina cocina = new Cocina();
         cocina = new Cocina("Arepalandia", "Arepas", "33 Avenue", "3155678",jefeCocina,inventario);
         System.out.println("***** BIENVENIDO A LA COCINA ***** \n");
         
@@ -128,15 +127,25 @@ public class MasterChef {
         
    }
     
+    public void hacerPedido(){
+        Plato[] platos = {new Plato(recetaAH,"Medio"),new Plato(recetaAH,"Completo") };
+        pedido = new Pedido(platos);
+        System.out.println("\n***** Precio *****: \n");
+        
+        int precio = pedido.getPrecio(recetaAH);
+        System.out.println("Precio total:\t" +precio);
+        
+        
+    }
+    
+    
+    
+    
     public void validarInventario(){
         boolean [] hayIngredientes = new boolean[NUMERO_INGREDIENTES_RECETA];
         System.out.println("***** Validar Inventario *****: \n");
         System.out.println("Receta: " +recetaAH.getNombre());
         hayIngredientes = inventario.validarExistenciaIngredientesReceta(ingredientesRecetaAH, ingredientes);
-        
-        
-        
-        
     }
     
     
@@ -153,8 +162,10 @@ public class MasterChef {
         masterChef.crearJefeCocina();
         masterChef.crearRecetas();
         masterChef.crearCocina();
+        
         masterChef.crearRecetaAH();
         masterChef.validarInventario();
+        masterChef.hacerPedido();
         
         
         

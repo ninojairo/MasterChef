@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package masterchef;
+
+/**
+ *
+ * @author jaironino
+ */
+public class RecetaArepaHuevo implements Receta {
+    private static final int PRECIO_PORCION_COMPLETA = 500;
+    private static final double PRECIO_PORCION_MEDIA = 0.8*PRECIO_PORCION_COMPLETA;
+    
+    
+    
+    private String nombre;
+    private Ingrediente ingrediedientes [] = new Ingrediente[3];
+    
+
+    public RecetaArepaHuevo(String nombre) {
+        this.nombre = nombre;
+        
+    }
+    
+    @Override
+    public void setIngredienteReceta(String nombre, int cantidad, String unidades){}
+    
+    @Override
+    public String getNombre() {
+        return nombre;
+    }
+    
+    @Override
+    public int getPrecioPorcionCompleta(){
+        return PRECIO_PORCION_COMPLETA;
+    }
+    
+    @Override
+    public int getPrecioPorcionMedia(){
+        return (int)PRECIO_PORCION_MEDIA;
+    }
+    
+    
+
+
+    
+}
