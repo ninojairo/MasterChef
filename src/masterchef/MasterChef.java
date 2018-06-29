@@ -24,7 +24,7 @@ public class MasterChef {
     private JefeCocina jefeCocina;
     private Ingrediente ingrediente;
     private Ingrediente [] ingredientes;
-    private Ingrediente [] ingredientesAH;
+    private Ingrediente [] ingredientesRecetaAH;
         
     
     private Ingrediente harina;
@@ -60,7 +60,7 @@ public class MasterChef {
         harina = new Ingrediente("Harina", 5, "Kilos");
         huevo = new Ingrediente("Huevo", 12, "Unidades");
         queso = new Ingrediente("Queso", 6, "Kilos");
-        aceite = new Ingrediente("Aceite", 15, "Litros");
+        aceite = new Ingrediente("Aceite", 0, "Litros");
         camarones = new Ingrediente("Camarones", 10, "Kilos");
         carne = new Ingrediente("Carne", 10, "Kilos");
         sal = new Ingrediente("Sal", 1, "Kilos");
@@ -97,14 +97,13 @@ public class MasterChef {
     
     public void crearRecetaAH(){
         
-        ingredientesAH = new Ingrediente[NUMERO_INGREDIENTES_RECETA];
-        Ingrediente harina = new Ingrediente("Harina", 10, "Kilos");
-        Ingrediente huevo = new Ingrediente("Huevo", 1, "Unidad");
+        ingredientesRecetaAH = new Ingrediente[NUMERO_INGREDIENTES_RECETA];
+        Ingrediente harina = new Ingrediente("Harina", 1, "Kilos");
+        Ingrediente huevo = new Ingrediente("Huevo", 3, "Unidad");
         Ingrediente aceite = new Ingrediente("Aceite", 1, "Litro");
-        //Ingrediente [] ingredientesAH = {harina,huevo,aceite};
-        ingredientesAH[0] = harina;
-        ingredientesAH[1] = huevo;
-        ingredientesAH[2] = aceite;
+        ingredientesRecetaAH[0] = harina;
+        ingredientesRecetaAH[1] = huevo;
+        ingredientesRecetaAH[2] = aceite;
         
         
     
@@ -119,6 +118,8 @@ public class MasterChef {
         
         //Cocina cocina = new Cocina();
         cocina = new Cocina("Arepalandia", "Arepas", "33 Avenue", "3155678",jefeCocina,inventario);
+        System.out.println("***** BIENVENIDO A LA COCINA ***** \n");
+        
         System.out.println("Cocina: " +cocina.toString());
        
         /*for(int i=0;i<ingredientes.length;i++){
@@ -127,16 +128,14 @@ public class MasterChef {
         
    }
     
-    public boolean validarInventario(){
-        boolean hayInventario = true;
-        System.out.println("Cantidades Receta: " +ingredientesAH[0].getNombre() + " Cantidad: " +ingredientesAH[0].getCantidad());
-        System.out.println("Cantidades Inventario: " +inventario.getInventario()[0]);
-        inventario.getIngrediente("harina");
+    public void validarInventario(){
+        boolean [] hayIngredientes = new boolean[NUMERO_INGREDIENTES_RECETA];
+        System.out.println("***** Validar Inventario *****: \n");
+        System.out.println("Receta: " +recetaAH.getNombre());
+        hayIngredientes = inventario.validarExistenciaIngredientesReceta(ingredientesRecetaAH, ingredientes);
         
         
         
-        
-        return hayInventario;
         
     }
     

@@ -31,20 +31,48 @@ public class Inventario {
     
     }
     
-    public Ingrediente getIngrediente(String nombre){
     
-        for (int i=0; i<ingredientes.length;i++){
-            if(ingredientes[i].getNombre()==nombre){
-                System.out.println("Ingredientes Name: "+ingredientes[i].getNombre() + "Ingredientes Cantidad: "+ingredientes[i].getCantidad());
-                i+=ingredientes.length;
-            }
-            else{
-                System.out.println("No hay");
+    
+    public boolean [] validarExistenciaIngredientesReceta(Ingrediente [] ingredientesReceta, Ingrediente [] ingredientes){
+        boolean [] hayIngredientes = new boolean[3];
+        
+        for (int i=0; i<ingredientesReceta.length;i++){
+            //System.out.println("RNombre: " +ingredientesReceta[i].getNombre()+ "RCantidad: " +ingredientesReceta[i].getCantidad());
+            
+            for(int j=0; j<ingredientes.length;j++){
+            
+                if(ingredientes[j].getNombre().toLowerCase().equals(ingredientesReceta[i].getNombre().toLowerCase())){
+                    //System.out.println(" INombre: "+ingredientes[j].getNombre() + " ICantidad: "+ingredientes[j].getCantidad());
+                    
+                    if(ingredientesReceta[i].getCantidad()<=ingredientes[j].getCantidad() ){
+                        System.out.println("Si hay ingrediente: " +ingredientes[j].getNombre() + "\tReceta: "+ingredientesReceta[i].getCantidad() + "\tInventario: "+ingredientes[j].getCantidad());
+                        hayIngredientes[i]=true;
+                    }
+                    else{
+                        System.out.println("No hay ingrediente: " +ingredientes[j].getNombre() + "\tReceta: "+ingredientesReceta[i].getCantidad() + " \tInventario: "+ingredientes[j].getCantidad());
+                        hayIngredientes[i]=false;
+                    }
+                    
+                    j+=ingredientes.length;
+                    
+                }
+                else{
+                    //System.out.println("No hay");
+                }
+            
             }
             
         }
         
-        return ingrediente;
+        for(int k=0; k<hayIngredientes.length;k++){
+            //System.out.println("Estados: "+ hayIngredientes[k]);
+        }
+        
+        return hayIngredientes;
+        
+        
+    
+        
     }
     
     @Override
