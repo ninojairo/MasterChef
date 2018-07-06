@@ -33,4 +33,8 @@ public class Pedido {
     
     }
     
+    public String toString(){
+        return ("Pedido: " +platos.toString());
+    }
+    
 }

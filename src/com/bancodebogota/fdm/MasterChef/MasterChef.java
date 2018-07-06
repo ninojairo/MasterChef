@@ -49,16 +49,16 @@ public class MasterChef {
     }
     
     public void crearIngredientes(){
-        harina = new Ingrediente("Harina", 5, "Kilos");
-        huevo = new Ingrediente("Huevo", 12, "Unidades");
-        queso = new Ingrediente("Queso", 6, "Kilos");
-        aceite = new Ingrediente("Aceite", 0, "Litros");
-        camarones = new Ingrediente("Camarones", 10, "Kilos");
-        carne = new Ingrediente("Carne", 10, "Kilos");
-        sal = new Ingrediente("Sal", 1, "Kilos");
-        arroz = new Ingrediente("Arroz", 10, "Kilos");
-        leche = new Ingrediente("Carne", 10, "Litros");
-        limon = new Ingrediente("Limon", 10, "Unidades");
+        this.harina = new IngredienteContable("Harina", 5, "Kilos");
+        this.huevo = new IngredienteContable("Huevo", 12, "Unidades");
+        this.queso = new IngredienteNoContable("Queso", 6, "Kilos");
+        this.aceite = new IngredienteNoContable("Aceite", 0, "Litros");
+        this.camarones = new IngredienteNoContable("Camarones", 10, "Kilos");
+        this.carne = new IngredienteNoContable("Carne", 10, "Kilos");
+        this.sal = new IngredienteNoContable("Sal", 1, "Kilos");
+        this.arroz = new IngredienteNoContable("Arroz", 10, "Kilos");
+        this.leche = new IngredienteNoContable("Carne", 10, "Litros");
+        this.limon = new IngredienteContable("Limon", 10, "Unidades");
         
         
         
@@ -137,6 +137,8 @@ public class MasterChef {
     
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
         
         MasterChef masterChef = new MasterChef();
         masterChef.crearCliente();
