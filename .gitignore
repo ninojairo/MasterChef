@@ -1,0 +1,9 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# ignore all files in the build/ directory
+build/
+dist/
